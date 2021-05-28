@@ -7,7 +7,7 @@
 
 void fileout(int para)
 {
-	QString filename;
+	QString filename = "";
 	QString strline;
 
 
