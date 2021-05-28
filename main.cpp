@@ -1,6 +1,9 @@
 #include <QCoreApplication>
 #include <QTextStream>
 #include <QFile>
+#include <QTime>
+#include <QDate>
+#include <QDateTime>
 
 
 
@@ -43,6 +46,44 @@ void fileout(int para)
 	}
 }
 
+void writeUnitXml()
+{
+	QTime time;
+	QDate date;
+	QString strTime;
+	QString strDate;
+
+
+	time = QTime::currentTime();
+	strTime = time.toString(Qt::TextDate);
+
+	QDateTime asd(QDateTime::currentDateTime());
+	uint unixTime = asd.toTime_t();
+
+	date = QDate::currentDate();
+	strDate = asd.toString("yyyy-mm-ddThh:mm:ss");
+
+	QFile file(qApp->applicationDirPath()+ "/" + "test.xml");
+	if(file.open(QIODevice::WriteOnly | QIODevice::Text)== true)
+	{
+
+
+		file.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
+		file.write("<testsuites>\n");
+		file.write("  <testsuite name=\"INT | Finanzieren - Smoketests\" tests=\"10\" failures=\"1\" skipped=\"1\" time=\"" +QByteArray::number(unixTime) + "\" timestamp=\"" + strDate.toLatin1()+ "\" id=\"39f13ba7-6820-d6dc-8165-76fbcceabc7e\" log=\"\">\n");
+		file.write("	<testcase name=\"Finanzieren Smoketests - Grundstück erfassen\" time=\"" +QByteArray::number(unixTime) + "\" timestamp=\"" + strDate.toLatin1()+ ".6008759+01:00\" log=\"+ Passed Finanzieren Smoketests - Grundstück erfassen&#xD;&#xA;…\" />\n");
+		file.write("	<testcase name=\"Finanzieren Smoketests - Versicherung erfassen\" time=\"93.8767338\" timestamp=\"" + strDate.toLatin1()+ ".9749463+01:00\" log=\"+ Passed Finanzieren Smoketests - Versicherung erfassen&#xD;&#xA;…\" />\n");
+		file.write("	<testcase name=\"Finanzieren Smoketests - Finanzierung zusammenstellen\" time=\"143.0023053\" timestamp=\"" + strDate.toLatin1()+ ".3683063+01:00\" log=\"+ Failed Finanzieren Smoketests - Finanzierung zusammenstellen&#xD;&#xA;…\" />\n");
+		file.write("	<testcase name=\"Finanzieren Smoketests - Kreditportfolio überprüfen\" time=\"\" timestamp=\"\">\n");
+		file.write("	<skipped />\n");
+		file.write("	</testcase>\n");
+		file.write("  </testsuite>\n");
+		file.write("</testsuites>\n");
+		file.close();
+	}
+
+}
+
 int main(int argc, char *argv[])
 {
 	int iPara=0;
@@ -62,5 +103,6 @@ int main(int argc, char *argv[])
 	}
 	QTextStream(stdout) << "Hello World!" << endl;
 	fileout(iPara);
+	writeUnitXml();
 	return 0;
 }
