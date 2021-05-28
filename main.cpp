@@ -70,11 +70,11 @@ void writeUnitXml()
 
 		file.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
 		file.write("<testsuites>\n");
-		file.write("  <testsuite name=\"INT | Finanzieren - Smoketests\" tests=\"10\" failures=\"1\" skipped=\"1\" time=\"" +QByteArray::number(unixTime) + "\" timestamp=\"" + strDate.toLatin1()+ "\" id=\"39f13ba7-6820-d6dc-8165-76fbcceabc7e\" log=\"\">\n");
-		file.write("	<testcase name=\"Finanzieren Smoketests - Grundstück erfassen\" time=\"" +QByteArray::number(unixTime) + "\" timestamp=\"" + strDate.toLatin1()+ ".6008759+01:00\" log=\"+ Passed Finanzieren Smoketests - Grundstück erfassen&#xD;&#xA;…\" />\n");
-		file.write("	<testcase name=\"Finanzieren Smoketests - Versicherung erfassen\" time=\"93.8767338\" timestamp=\"" + strDate.toLatin1()+ ".9749463+01:00\" log=\"+ Passed Finanzieren Smoketests - Versicherung erfassen&#xD;&#xA;…\" />\n");
-		file.write("	<testcase name=\"Finanzieren Smoketests - Finanzierung zusammenstellen\" time=\"143.0023053\" timestamp=\"" + strDate.toLatin1()+ ".3683063+01:00\" log=\"+ Failed Finanzieren Smoketests - Finanzierung zusammenstellen&#xD;&#xA;…\" />\n");
-		file.write("	<testcase name=\"Finanzieren Smoketests - Kreditportfolio überprüfen\" time=\"\" timestamp=\"\">\n");
+		file.write("  <testsuite name=\"AvmTool - AvmSetId\" tests=\"10\" failures=\"1\" skipped=\"1\" time=\"" +QByteArray::number(unixTime) + "\" timestamp=\"" + strDate.toLatin1()+ "\" id=\"39f13ba7-6820-d6dc-8165-76fbcceabc7e\" log=\"\">\n");
+		file.write("	<testcase name=\"AvmSetId - Version\" time=\"" +QByteArray::number(unixTime) + "\" timestamp=\"" + strDate.toLatin1()+ ".6008759+01:00\" log=\"+ Passed AvmSetId - Version&#xD;&#xA;…\" />\n");
+		file.write("	<testcase name=\"AvmSetId - open database connection\" time=\"93.8767338\" timestamp=\"" + strDate.toLatin1()+ ".9749463+01:00\" log=\"+ Passed AvmSetId - open database connection&#xD;&#xA;…\" />\n");
+		file.write("	<testcase name=\"AvmSetId - load macs from database\" time=\"143.0023053\" timestamp=\"" + strDate.toLatin1()+ ".3683063+01:00\" log=\"+ Failed AvmSetId - macs successfully loaded!&#xD;&#xA;…\" />\n");
+		file.write("	<testcase name=\"AvmSetId - macs successfully loaded!\" time=\"\" timestamp=\"\">\n");
 		file.write("	<skipped />\n");
 		file.write("	</testcase>\n");
 		file.write("  </testsuite>\n");
