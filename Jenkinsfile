@@ -16,6 +16,7 @@ pipeline {
       steps {
         sh '''cd d:\\\\development\\\\Jenkins\\\\workspace\\\\HelloWorld\\\\release
 call HelloWorld.exe'''
+        bat(script: 'Windows', returnStatus: true, returnStdout: true, label: 'TestBat')
       }
     }
 
