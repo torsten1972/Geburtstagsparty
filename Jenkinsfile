@@ -15,7 +15,7 @@ pipeline {
     stage('Test') {
       steps {
         sh '''
-cmd.exe /K ..//HelloWorld//release//HelloWorld.exe'''
+bat: "cmd.exe /K ../HelloWorld/release/HelloWorld.exe"'''
       }
     }
 
