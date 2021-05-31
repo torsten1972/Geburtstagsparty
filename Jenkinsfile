@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('Test') {
+    stage('build') {
       steps {
-        sh 'call d:\\development\\Jenkins\\workspace\\HelloWorld\\release\\HelloWorld.exe'
+        echo 'build'
       }
     }
 
