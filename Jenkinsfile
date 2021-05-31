@@ -12,13 +12,6 @@ pipeline {
       }
     }
 
-    stage('Change Dir') {
-      steps {
-        dir(path: 'd:\\development\\Jenkins\\workspace\\HelloWorld\\')
-        echo 'change dir'
-      }
-    }
-
     stage('Test') {
       steps {
         bat(script: 'HelloWorld.bat', encoding: 'UTF-8', label: 'TestBat', returnStdout: true, returnStatus: true)
