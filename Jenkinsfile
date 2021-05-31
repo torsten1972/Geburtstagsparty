@@ -12,9 +12,15 @@ pipeline {
       }
     }
 
+    stage('Change Dir') {
+      steps {
+        dir(path: 'd:\\development\\Jenkins\\workspace\\HelloWorld\\')
+      }
+    }
+
     stage('Test') {
       steps {
-        bat(script: 'HelloWorld.bat', returnStatus: true, returnStdout: true, label: 'TestBat', encoding: 'UTF-8')
+        bat(script: 'HelloWorld.bat', encoding: 'UTF-8', label: 'TestBat', returnStdout: true, returnStatus: true)
       }
     }
 
