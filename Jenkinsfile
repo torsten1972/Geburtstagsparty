@@ -14,7 +14,8 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'cmd.exe'
+        sh '''
+cmd.exe /K HelloWorld.exe'''
       }
     }
 
