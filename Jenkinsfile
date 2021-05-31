@@ -14,12 +14,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh '''bat "cmd.exe"
-
-
-
-
-'''
+        sh 'cmd.exe'
       }
     }
 
