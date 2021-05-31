@@ -15,6 +15,7 @@ pipeline {
     stage('Change Dir') {
       steps {
         dir(path: 'd:\\development\\Jenkins\\workspace\\HelloWorld\\')
+        echo 'change dir'
       }
     }
 
