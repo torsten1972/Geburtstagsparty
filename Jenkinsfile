@@ -14,7 +14,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh '''cd d:\\development\\Jenkins\\workspace\\HelloWorld\\release
+        sh '''cd d:\\\\development\\\\Jenkins\\\\workspace\\\\HelloWorld\\\\release
 call HelloWorld.exe'''
       }
     }
