@@ -14,7 +14,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'sh cmd:"call HelloWorld.exe", name: "HelloWorld.exe"'
+        sh 'sh "ls -ll"'
       }
     }
 
