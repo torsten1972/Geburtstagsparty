@@ -14,7 +14,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        bat(script: 'dir', returnStatus: true, returnStdout: true, label: 'TestBat', encoding: 'UTF-8')
+        bat(script: 'HelloWorld.bat', returnStatus: true, returnStdout: true, label: 'TestBat', encoding: 'UTF-8')
       }
     }
 
