@@ -14,7 +14,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'sh "ls -ll"'
+        sh 'bat "dir"'
       }
     }
 
